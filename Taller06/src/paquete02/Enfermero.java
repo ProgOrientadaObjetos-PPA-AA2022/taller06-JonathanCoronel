@@ -14,10 +14,11 @@ public class Enfermero {
     private String tipo;
     private double sueldMensualEnfer;
 
-    public Enfermero(String nom, String tip, double sueld) {
+    public Enfermero(String nom, double sueld, String tip) {
         nomEnfermero = nom;
-        tipo = tip;
         sueldMensualEnfer = sueld;
+        tipo = tip;
+
     }
 
     public void establecerNomEnfermero(String n) {

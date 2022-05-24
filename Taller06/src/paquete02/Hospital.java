@@ -18,6 +18,17 @@ public class Hospital {
     private double totalSueldo;
     private String direcHospital;
 
+    public Hospital(String nom, String direc, Ciudad ciu, int espe, Doctor[] doc,
+            Enfermero[] enfer) {
+        nomHospital = nom;
+        direcHospital = direc;
+        ciudad = ciu;
+        numEspecialidades = espe;
+        doctor = doc;
+        enfermero = enfer;
+
+    }
+
     public void establecerNomHospital(String n) {
         nomHospital = n;
     }
@@ -38,8 +49,18 @@ public class Hospital {
         enfermero = n;
     }
 
-    public void establecerTotalSueldo(double n) {
-        totalSueldo = n;
+    public void establecerTotalSueldo() {
+        double suma1 = 0;
+        double suma2 = 0;
+
+        for (int i = 0; i < obtnerDoctor().length; i++) {
+            suma1 = suma1 + obtnerDoctor()[i].obtenerSueldMensual();
+        }
+        for (int i = 0; i < obtnerEnfermero().length; i++) {
+            suma2 = suma2 + obtnerEnfermero()[i].obtenerSueldMensualEnfer();
+        }
+
+        totalSueldo = suma1 + suma2;
     }
 
     public void establecerDirecHospital(String n) {
@@ -72,5 +93,31 @@ public class Hospital {
 
     public String obtnerDirecHospital() {
         return direcHospital;
+    }
+
+    @Override
+    public String toString() {
+        String resul = String.format("Hospital %s\nDirección : %s\nCiudad : %s\n"
+                + "Provincia : %s\nNumero de especialidades : %d\n"
+                + "Listado de Médicos :\n", nomHospital, direcHospital,
+                ciudad.obtenerNomCIudad(), ciudad.obtenerProvinci(),
+                numEspecialidades);
+        for (int i = 0; i < obtnerDoctor().length; i++) {
+            resul = String.format("%s-%s - %.2f - %s\n", resul,
+                    obtnerDoctor()[i].obtenerNomDoctor(),
+                    obtnerDoctor()[i].obtenerSueldMensual(),
+                    obtnerDoctor()[i].obtenerEspecialidad());
+        }
+        resul = String.format("%s\nListado de Enfermeros(as)\n", resul);
+        for (int i = 0; i < obtnerEnfermero().length; i++) {
+            resul = String.format("%s-%s - %.2f - %s\n", resul,
+                    obtnerEnfermero()[i].obtenerNomEnfermero(),
+                    obtnerEnfermero()[i].obtenerSueldMensualEnfer(),
+                    obtnerEnfermero()[i].obtenerTipo());
+        }
+        resul = String.format("%s\nTotal de sueldos a pagar por mes: %.2f\n",
+                resul, totalSueldo);
+
+        return resul;
     }
 }

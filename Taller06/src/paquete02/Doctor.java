@@ -14,10 +14,11 @@ public class Doctor {
     private String especialidad;
     private double sueldMensualDoc;
 
-    public Doctor(String nom, String espe, double sueld) {
+    public Doctor(String nom, double sueld, String espe) {
         nomDoctor = nom;
-        especialidad = espe;
         sueldMensualDoc = sueld;
+        especialidad = espe;
+
     }
 
     public void establecerNomDoctor(String n) {
