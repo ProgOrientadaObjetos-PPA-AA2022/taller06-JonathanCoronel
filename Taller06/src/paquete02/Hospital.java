@@ -103,14 +103,14 @@ public class Hospital {
                 ciudad.obtenerNomCIudad(), ciudad.obtenerProvinci(),
                 numEspecialidades);
         for (int i = 0; i < obtnerDoctor().length; i++) {
-            resul = String.format("%s-%s - %.2f - %s\n", resul,
+            resul = String.format("%s-%s -Sueldo: %.2f - %s\n", resul,
                     obtnerDoctor()[i].obtenerNomDoctor(),
                     obtnerDoctor()[i].obtenerSueldMensual(),
                     obtnerDoctor()[i].obtenerEspecialidad());
         }
         resul = String.format("%s\nListado de Enfermeros(as)\n", resul);
         for (int i = 0; i < obtnerEnfermero().length; i++) {
-            resul = String.format("%s-%s - %.2f - %s\n", resul,
+            resul = String.format("%s-%s -Sueldo: %.2f - %s\n", resul,
                     obtnerEnfermero()[i].obtenerNomEnfermero(),
                     obtnerEnfermero()[i].obtenerSueldMensualEnfer(),
                     obtnerEnfermero()[i].obtenerTipo());
