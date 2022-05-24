@@ -14,7 +14,7 @@ import paquete02.Enfermero;
  *
  * @author JonathanCoronel
  */
-public class Ejecutor {
+public class Principal {
 
     public static void main(String[] args) {
         // TODO code application logic here
@@ -23,7 +23,7 @@ public class Ejecutor {
         String nombre = entrada.nextLine();
         System.out.println("Ingrese la Direccion del Hospital");
         String direc = entrada.nextLine();
-        System.out.println("Ingrese la Ciudad donde se ubca el Hospital");
+        System.out.println("Ingrese la Ciudad donde se ubica el Hospital");
         String ciudad = entrada.nextLine();
         System.out.println("Ingrese la Provincia");
         String prov = entrada.nextLine();
